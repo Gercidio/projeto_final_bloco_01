@@ -1,18 +1,29 @@
 package projeto_final_bloco_01;
 
 import java.util.Scanner;
-
 import projeto_final_bloco_01.util.Cores;
+import ecommerce.model.repository.*;
+import ecommerce.model.Produtos;
+import ecommerce.model.Rugby;
+import ecommerce.model.Futebol;
+
 
 
 public class Menu {
 
 	public static void main(String[] args) {
-Scanner leia = new Scanner(System.in);
+	Scanner leia = new Scanner(System.in);
 		
+	ProdutoController produto = new ProdutoController();
+	
+	
 		int id, tipo, opcao;
 		String nome;
 		float preco;
+		
+		
+		
+		
 		
 while(true) {
 	 
