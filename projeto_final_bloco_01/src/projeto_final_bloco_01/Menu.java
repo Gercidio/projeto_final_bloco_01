@@ -2,7 +2,8 @@ package projeto_final_bloco_01;
 
 import java.util.Scanner;
 
-import ecommerce.util.Cores;
+import projeto_final_bloco_01.util.Cores;
+
 
 public class Menu {
 
@@ -14,7 +15,7 @@ Scanner leia = new Scanner(System.in);
 		float preco;
 		
 while(true) {
-	
+	 
 			System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND
 					+ "*****************************************************");
 			System.out.println("                                                     ");
@@ -27,6 +28,7 @@ while(true) {
 			System.out.println("            3 - Consultar Produtos por ID            ");
 			System.out.println("            4 - Atualizar Produtos		             ");
 			System.out.println("            5 - Apagar Produto                       ");
+			System.out.println("            6 - Sair		                         ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
