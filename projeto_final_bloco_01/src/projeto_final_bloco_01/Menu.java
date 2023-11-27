@@ -20,7 +20,7 @@ public class Menu {
 	ProdutoController produto = new ProdutoController();
 	
 	
-		int id, tipo, opcao;
+		int Id, tipo, opcao;
 		String nome;
 		float preco, bolaOval, bolaRedonda;
 		
@@ -28,7 +28,7 @@ public class Menu {
 		produto.cadastrar(p1);
 		
 		Futebol p2 = new Futebol(produto.gerarId(), 2, 1, "Chuteira", 400.0f, -25.0f);
-		produto.cadastrar(p1);
+		produto.cadastrar(p2);
 		
 		
 		
@@ -71,12 +71,68 @@ while(true) {
 		 
 		 switch(opcao) {
 		 
-		 case 1:
-		 case 2:
-		 case 3:
-		 case 4:
-		 case 5:
-		 default: 	 
+		 case 1: System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + "Criar produto\n\n");
+		 System.out.println("Digite o nome do produto: ");		 
+		 leia.skip("\\R");
+		 nome = leia.nextLine();
+		 
+		 System.out.println("Digite o tipo do produto (1 - Rugby ou 2 - FUtebol): ");
+		 tipo = leia.nextInt();
+		 
+		 System.out.println("Digite o preço do produto: ");
+		 preco = leia.nextFloat();
+		 
+		 keyPress();
+		 break;
+		 
+		 case 2:  System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + "Listar produtos\n\n");
+			 produto.listarTodos();
+			 
+			 keyPress();
+			 break;
+			 
+		 case 3: System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + "Consultar produtos por Id\n\n");
+		 
+		 	System.out.println("Digite o Id do produto: ");
+		 	Id = leia.nextInt();
+		 	
+		 	produto.procurarPorId(Id);
+		 
+			 keyPress();
+			 break;
+		 case 4: System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + "Atualizar dados dos produtos\n\n");
+			 System.out.println("Digite o Id do produto: ");
+			 Id = leia.nextInt();
+			 
+			 Optional<Produtos> produtos = produto.buscarNaCollection(Id);
+			 
+			 if(produtos.isPresent()) {
+				 System.out.println("Digite o nome do produto: ");		 
+				 leia.skip("\\R");
+				 nome = leia.next();
+				 System.out.println("Digite o tipo do produto (1 - Rugby ou 2 - FUtebol): ");
+				 tipo = leia.nextInt();
+				 
+				 System.out.println("Digite o preço do produto: ");
+				 preco = leia.nextFloat();
+			 }
+			 
+			 keyPress();
+			 break;
+			 
+		 case 5: System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT + "Apagar produtos\n\n");
+		 
+		 System.out.println("Digite o Id do produto: ");
+		 	Id = leia.nextInt();
+		 	
+		 	produto.deletar(Id);
+			 
+			 keyPress();
+			 break;
+		 default: 	System.out.println(Cores.TEXT_RED_BOLD + "\nOpção Inválida!\n" + Cores.TEXT_RESET);
+			
+			keyPress();
+			break; 
 		 }
 }
 	}
