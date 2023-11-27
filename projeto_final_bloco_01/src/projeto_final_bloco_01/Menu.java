@@ -63,7 +63,7 @@ while(true) {
 				opcao = 0;
 			}
 		 if (opcao == 6) {
-				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do Pernalonga - Looney Tunes Co.!");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "\nABC Esportes!");
 				sobre();
 				leia.close();
 				System.exit(0);
@@ -81,6 +81,19 @@ while(true) {
 		 
 		 System.out.println("Digite o preço do produto: ");
 		 preco = leia.nextFloat();
+		 
+		 switch(tipo) {
+			case 1 -> {
+				System.out.println("Digite o desconto: ");
+				bolaOval = leia.nextFloat();
+				produto.cadastrar(new Rugby(produto.gerarId(), tipo, opcao, nome, preco, bolaOval));
+			}
+			case 2 -> {
+				System.out.println("Digite o desconto: ");
+				bolaRedonda = leia.nextFloat();
+				produto.cadastrar(new Rugby(produto.gerarId(), tipo, opcao, nome, preco, bolaRedonda));
+			}
+		}
 		 
 		 keyPress();
 		 break;
@@ -115,6 +128,19 @@ while(true) {
 				 
 				 System.out.println("Digite o preço do produto: ");
 				 preco = leia.nextFloat();
+				 
+				 switch(tipo) {
+					case 1 -> {
+						System.out.println("Digite o desconto: ");
+						bolaOval = leia.nextFloat();
+						produto.cadastrar(new Rugby(produto.gerarId(), tipo, opcao, nome, preco, bolaOval));
+					}
+					case 2 -> {
+						System.out.println("Digite o desconto: ");
+						bolaRedonda = leia.nextFloat();
+						produto.cadastrar(new Rugby(produto.gerarId(), tipo, opcao, nome, preco, bolaRedonda));
+					}
+				}
 			 }
 			 
 			 keyPress();

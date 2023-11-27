@@ -60,8 +60,8 @@ public class Produtos {
 	public void visualizar() {
 	String tipo = "";
 	switch(this.tipo){
-	case 1 -> tipo = "Produtos Rugby";
-	case 2 -> tipo = "Produtos Futebol";
+	case 1 -> tipo = "Desconto Produtos Rugby";
+	case 2 -> tipo = "Desconto Produtos Futebol";
 	
 	}
 	
